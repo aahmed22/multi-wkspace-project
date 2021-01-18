@@ -24,9 +24,10 @@ The information will be pulled from  the CSV file and stored into several variab
 Aferwards the function call to ***createMultipleWorkspaces*** will be made. 
 
 ```python
-# The function "advanceBuildDeployment" will be the first portion of the script to be executed. This will open the 
-# "advanceBuild.csv" file then begin to iterate through each record of the csv file and take the columns and assign 
-# them to the respective values. Finally "createMultipleWorkspaces" will be called.
+# The function "advanceBuildDeployment" will be the first portion of the script to be executed. 
+# This will open the "advanceBuild.csv" file then begin to iterate through each record of the 
+# csv file and take the columns and assign them to the respective values. 
+# Finally "createMultipleWorkspaces" will be called.
 def advanceBuildDeployment():
     with open("advanceBuild.csv", newline='', encoding='utf-8-sig') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
@@ -51,7 +52,7 @@ You will need to fill the following portions:
 
 ```python
 # Created function called "createMultipleWorkspaces". This will take the record info from the csv file 
-# and execute the built-in create_workspaces function part of the boto3 package for "aws workspaces" service. 
+# and execute the built-in create_workspaces function from the boto3 package of "workspace service".
 def createMultipleWorkspaces(username, r_mode, c_type, aws_tag):
     response = prod_client.create_workspaces(
         Workspaces=[
